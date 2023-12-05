@@ -9,6 +9,9 @@ body {
 }
 
 header {
+  z-index: 1;
+  position: sticky;
+  top: 0;
   background-color: #2d2d2d;
   display: flex;
   width: 100%;
@@ -147,10 +150,14 @@ body .front .figc h1 {
     1px 1px 0 #000;
 }
 
-body .front .figc button {
-  margin: 2rem auto 0 auto;
+body .front .figc a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2.5rem auto;
+  font-style: normal;
   width: 30%;
-  height: 5vw;
+  height: 4vw;
   border-radius: 50px;
   color: white;
   font-family: "Inter", sans-serif;
@@ -160,16 +167,11 @@ body .front .figc button {
   background-color: #ff2929;
   box-shadow: 0 2px 5px black;
   cursor: pointer;
-}
-
-body .front .figc button a {
-  text-decoration: none;
-  color: white;
+  line-height: 0.1vw;
 }
 
 .chose {
   width: 100%;
-
   text-align: center;
   font-family: "Alegreya SC", sans-serif;
   font-style: italic;

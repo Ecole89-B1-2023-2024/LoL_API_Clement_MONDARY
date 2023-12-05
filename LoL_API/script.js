@@ -11,6 +11,7 @@ const displayRandomChampionInfo = (championData) => {
   const h2Element = document.querySelector(".figc h2");
   const h1Element = document.querySelector(".figc h1");
   const imgElement = document.querySelector(".front img");
+  const aboutChampionLink = document.getElementById("aboutChampion");
 
   console.log("Nom du champion aléatoire :", randomChampion.name);
   console.log("Titre du champion aléatoire :", randomChampion.title);
@@ -18,6 +19,9 @@ const displayRandomChampionInfo = (championData) => {
     "Lien sprite du champion aléatoire :",
     `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${randomChampion.id}_0.jpg`
   );
+
+  // Ajouter le lien vers champion.html avec l'ID du champion aléatoire
+  aboutChampionLink.href = `champion.html?id=${randomChampion.id}`;
 
   h2Element.textContent = randomChampion.title;
   h1Element.textContent = randomChampion.name;

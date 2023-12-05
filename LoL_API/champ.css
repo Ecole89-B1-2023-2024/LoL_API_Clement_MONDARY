@@ -9,6 +9,9 @@ body {
 }
 
 header {
+  z-index: 1;
+  position: sticky;
+  top: 0;
   background-color: #2d2d2d;
   display: flex;
   width: 100%;
@@ -200,6 +203,7 @@ body .figc h1 {
 #legend .legendChamp .spells p {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
+  padding-right: 1rem;
 }
 
 /* DESCPRIPTION */
