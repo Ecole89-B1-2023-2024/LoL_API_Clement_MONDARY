@@ -155,6 +155,11 @@ body .front .figc button {
   cursor: pointer;
 }
 
+body .front .figc button a {
+  text-decoration: none;
+  color: white;
+}
+
 .chose {
   width: 100%;
 
@@ -181,9 +186,14 @@ body .front .figc button {
   justify-content: space-between;
 }
 
-#selection div {
+#selection a {
+  text-decoration: none;
   width: 32%;
   margin-bottom: 1.7vw;
+}
+
+#selection div {
+  width: 100%;
 }
 
 #selection div img {

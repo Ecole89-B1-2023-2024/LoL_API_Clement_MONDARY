@@ -3,7 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="champ.css" />
+    <link
+      rel="shortcut icon"
+      href="./images/lol_logo.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.cdnfonts.com/css/montserrat-subrayada"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/css.gg@2.0.0/icons/css/search.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.cdnfonts.com/css/inter"
+      href="https://fonts.cdnfonts.com/css/alegreya"
+      rel="stylesheet"
+    />
+    <title>Champion</title>
   </head>
-  <body></body>
+  <body>
+    <header class="header">
+      <img src="./images/lol_title.png" />
+      <h2>UNOFFICIAL CHAMPIONS DOCUMENTATION</h2>
+      <form action="search">
+        <input type="text" placeholder="AATROX, AHRI, AKALI..." />
+        <i class="gg-search"></i>
+        <button onclick="refreshData()">CHERCHER</button>
+      </form>
+      <a href="index.html">index</a>
+    </header>
+    <main>
+      <div class="champinfo">
+        <img class="blurchamp" src="" />
+      </div>
+      <img class="champsprite" src="" />
+      <div class="figc">
+        <h2></h2>
+        <h1></h1>
+      </div>
+    </main>
+  </body>
+  <script src="script.js"></script>
+  <script src="champ.js"></script>
 </html>
