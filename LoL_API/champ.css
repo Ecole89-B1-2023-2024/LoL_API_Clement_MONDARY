@@ -123,3 +123,94 @@ body .figc h1 {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 }
+
+/* SECTION LEGEND */
+
+#legend {
+  background-color: #151515;
+  padding: 8rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#legend .legendChamp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 80%;
+  border: 1px solid #acacac;
+  padding: 2rem;
+  font-family: "Alegreya", sans-serif;
+  color: white;
+}
+
+/* SPELLS */
+
+#legend .legendChamp .spells {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  border-right: 1px solid #acacac;
+}
+
+#legend .legendChamp .spells h1 {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  margin: 0;
+}
+
+#legend .legendChamp .spells div {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 0;
+}
+
+#legend .legendChamp .spells div img {
+  width: 12%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border: 1.5px solid transparent; /* Ajoutez une bordure transparente par défaut */
+}
+
+#legend .legendChamp .spells div img.active {
+  border-color: white; /* Changez la couleur de la bordure pour le contour blanc */
+}
+
+#legend .legendChamp .spells div img:hover {
+  transform: scale(1.13);
+}
+
+#legend .legendChamp .spells h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  margin: 1rem 0 0 0;
+  text-transform: uppercase;
+}
+
+#legend .legendChamp .spells p {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/* DESCPRIPTION */
+
+#legend .legendChamp .description {
+  flex: 1;
+  width: 50%;
+  height: 100%;
+}
+
+#legend .legendChamp .description p {
+  padding-left: 1rem;
+  font-size: 1.5rem;
+}
