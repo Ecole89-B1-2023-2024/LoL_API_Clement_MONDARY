@@ -52,13 +52,13 @@ async function main() {
     const championImageLink = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id}_0.jpg`;
 
     const championHTML = `
-      <a href="champion.html?name=${champion.name}&title=${champion.title}&image=${championImageLink}">
-        <div>
-          <img src="${championImageLink}" />
-          <h3>${champion.name}</h3>
-        </div>
-      </a>
-    `;
+    <a href="champion.html?id=${champion.id}">
+      <div>
+        <img src="${championImageLink}" />
+        <h3>${champion.name}</h3>
+      </div>
+    </a>
+  `;
 
     selectionSection.insertAdjacentHTML("beforeend", championHTML);
   }
@@ -93,7 +93,7 @@ function updateChampionInfoInHTML(championData) {
     const championImageLink = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id}_0.jpg`;
 
     const championHTML = `
-    <a href="champion.html?name=${champion.name}&title=${champion.title}&image=${championImageLink}">
+    <a href="champion.html?id=${champion.id}">
       <div>
         <img src="${championImageLink}" />
         <h3>${champion.name}</h3>
