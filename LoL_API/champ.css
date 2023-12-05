@@ -15,8 +15,15 @@ header {
   height: 70px;
 }
 
-header img {
+header a {
+  width: 8%;
+  height: 70px;
   margin-left: 0.5rem;
+  align-items: center;
+}
+
+header a img {
+  width: 70%;
 }
 
 header h2 {
