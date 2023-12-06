@@ -121,7 +121,7 @@ body .front figcaption {
 body .front .figc {
   width: 50%;
   position: absolute;
-  top: 44vw;
+  margin-top: 44vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
