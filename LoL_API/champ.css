@@ -54,6 +54,9 @@ header form input {
   border: none;
   background-color: #4b4b4b;
   padding-left: 1rem;
+  color: white;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
 }
 
 header form i {
@@ -228,7 +231,7 @@ body .figc h1 {
   text-transform: uppercase;
   display: flex;
   justify-content: center;
-  padding: 8rem 0;
+  padding-top: 8rem;
 }
 
 #skin .skinDiv {
@@ -306,4 +309,58 @@ body .figc h1 {
   font-size: 1.3rem;
   padding-left: 1rem;
   width: auto;
+}
+
+/* SELECTION */
+
+.chose {
+  width: 100%;
+  text-align: center;
+  font-family: "Alegreya SC", sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 3rem;
+  line-height: 10vh;
+}
+
+.chose strong {
+  font-weight: 600;
+  font-size: 10rem;
+}
+
+#selection {
+  width: 95%;
+  margin: 0 auto 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#selection a {
+  text-decoration: none;
+  width: 32%;
+  margin-bottom: 1.7vw;
+  margin: 0 0.9rem 2rem 0.5rem;
+}
+
+#selection div {
+  width: 100%;
+}
+
+#selection div img {
+  display: block;
+  width: 100%;
+  border-radius: 25px 0 0 0;
+}
+
+#selection div h3 {
+  font-family: "Alegreya SC", sans-serif;
+  text-transform: uppercase;
+  padding: 0.4rem;
+  padding-left: 0.8rem;
+  color: white;
+  background-color: #2d2d2d;
+  font-size: 2.3vw;
+  margin: 0 auto;
+  border-radius: 0 0 25px 0;
 }

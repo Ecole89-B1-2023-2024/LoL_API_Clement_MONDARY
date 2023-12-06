@@ -54,6 +54,9 @@ header form input {
   border: none;
   background-color: #4b4b4b;
   padding-left: 1rem;
+  color: white;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
 }
 
 header form i {
@@ -193,13 +196,14 @@ body .front .figc a {
   margin: 0 auto 0 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 #selection a {
   text-decoration: none;
   width: 32%;
   margin-bottom: 1.7vw;
+  margin: 0 0.9rem 2rem 0.5rem;
 }
 
 #selection div {
