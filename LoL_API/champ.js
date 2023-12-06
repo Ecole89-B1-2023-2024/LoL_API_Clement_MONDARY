@@ -71,7 +71,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     function displaySpellInfo(spell, titleElement, descriptionElement) {
       titleElement.textContent = spell.name;
-      descriptionElement.textContent = spell.description;
+
+      const spellDescription = spell.description;
+
+      const cleanedDescription = spellDescription.replace(/<.*?>/g, " ");
+
+      descriptionElement.textContent = cleanedDescription;
     }
 
     const spellImages = [
