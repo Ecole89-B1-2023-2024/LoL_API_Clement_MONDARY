@@ -119,7 +119,7 @@ body .front figcaption {
 }
 
 body .front .figc {
-  width: 50%;
+  width: 100%;
   position: absolute;
   margin-top: 44vw;
   display: flex;
@@ -156,7 +156,7 @@ body .front .figc a {
   justify-content: center;
   margin: 2.5rem auto;
   font-style: normal;
-  width: 30%;
+  width: 15%;
   height: 4vw;
   border-radius: 50px;
   color: white;
@@ -166,6 +166,7 @@ body .front .figc a {
   border: none;
   background-color: #ff2929;
   box-shadow: 0 2px 5px black;
+  text-decoration: none;
   cursor: pointer;
   line-height: 0.1vw;
 }

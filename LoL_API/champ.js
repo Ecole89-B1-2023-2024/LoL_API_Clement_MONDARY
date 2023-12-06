@@ -24,6 +24,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     const loreParagraph = document.querySelector("#legend .description p");
     const spellTitleElement = document.querySelector("#legend .spells h2");
     const spellDescriptionElement = document.querySelector("#legend .spells p");
+    const skinSection = document.querySelector("#skin .skinScroll");
+    const backgroundImage = document.querySelector(".backgroundImage");
+
+    const championSkins = championInfo.data[championId].skins;
 
     passiveImage.addEventListener("click", () => {
       displaySpellInfo(
@@ -86,6 +90,34 @@ document.addEventListener("DOMContentLoaded", async function () {
         // Ajoutez la classe active à l'image actuellement cliquée
         spellImage.classList.add("active");
       });
+    });
+
+    championSkins.forEach((skin) => {
+      const skinHTML = `
+        <div>
+          <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championInfo.data[championId].id}_${skin.num}.jpg" />
+          <h2>${skin.name}</h2>
+        </div>
+      `;
+
+      skinSection.insertAdjacentHTML("beforeend", skinHTML);
+    });
+
+    backgroundImage.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championInfo.data[championId].id}_0.jpg`;
+
+    skinSection.addEventListener("click", (event) => {
+      const clickedDiv = event.target.closest("div");
+
+      if (clickedDiv && clickedDiv.parentElement === skinSection) {
+        const skinImage = clickedDiv.querySelector("img");
+
+        backgroundImage.src = skinImage.src;
+
+        const allSkinDivs = document.querySelectorAll("#skin .skinScroll div");
+        allSkinDivs.forEach((div) => div.classList.remove("active"));
+
+        clickedDiv.classList.add("active");
+      }
     });
 
     h2Element.textContent = championInfo.data[championId].title;
