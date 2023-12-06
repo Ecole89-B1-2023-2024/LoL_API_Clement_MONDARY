@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", async function () {
   searchInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
       event.preventDefault();
-      selectionSection.scrollIntoView({ behavior: "smooth" });
+      const choseSection = document.querySelector(".chose");
+      choseSection.scrollIntoView({ behavior: "smooth" });
     }
   });
 
