@@ -111,7 +111,14 @@ document.addEventListener("DOMContentLoaded", async function () {
       if (clickedDiv && clickedDiv.parentElement === skinSection) {
         const skinImage = clickedDiv.querySelector("img");
 
-        backgroundImage.src = skinImage.src;
+        // Appliquer la transition en ajustant l'opacité
+        backgroundImage.style.opacity = 0;
+
+        // Attendez une courte période pour que l'opacité puisse changer avant de changer l'image
+        setTimeout(() => {
+          backgroundImage.src = skinImage.src;
+          backgroundImage.style.opacity = 1; // Rétablir l'opacité
+        }, 150); // Vous pouvez ajuster le délai si nécessaire
 
         const allSkinDivs = document.querySelectorAll("#skin .skinScroll div");
         allSkinDivs.forEach((div) => div.classList.remove("active"));

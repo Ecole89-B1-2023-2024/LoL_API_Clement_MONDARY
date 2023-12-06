@@ -242,6 +242,8 @@ body .figc h1 {
   width: 100%;
   object-fit: fill;
   z-index: -1;
+  transition: opacity 0.5s ease;
+  opacity: 1;
 }
 
 #skin .skinChoices {
