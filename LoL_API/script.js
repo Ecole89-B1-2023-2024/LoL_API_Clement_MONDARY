@@ -6,6 +6,13 @@ document.addEventListener("DOMContentLoaded", async function () {
   const searchInput = document.querySelector("form input");
   searchInput.addEventListener("input", handleSearchInput);
 
+  searchInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      selectionSection.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+
   async function fetchChampionData() {
     try {
       const response = await fetch(jsonUrl);
@@ -109,7 +116,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     const imgElement = document.querySelector(".front img");
     const aboutChampionLink = document.getElementById("aboutChampion");
 
-    // Ajouter le lien vers champion.html avec l'ID du champion aléatoire
     aboutChampionLink.href = `champion.html?id=${randomChampion.id}`;
 
     h2Element.textContent = randomChampion.title;
