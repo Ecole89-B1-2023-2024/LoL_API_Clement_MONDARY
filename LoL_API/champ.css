@@ -258,7 +258,8 @@ body .figc h1 {
 }
 
 #skin .skinChoices h1 {
-  border-bottom: solid 1px #585858;
+  padding-bottom: 1rem;
+  border-bottom: solid 1px #afafaf;
   width: 100%;
   text-align: center;
   font-size: 5rem;
@@ -284,12 +285,15 @@ body .figc h1 {
 #skin .skinChoices .skinScroll div {
   display: flex;
   flex-direction: row;
-  border-top: #585858 1px solid;
-  border-bottom: #585858 1px solid;
   width: 100%;
   align-items: center;
   margin: 0.5rem 0;
   cursor: pointer;
+}
+
+#skin .skinChoices .skinScroll div.active {
+  border-top: #afafaf 1px solid;
+  border-bottom: #afafaf 1px solid;
 }
 
 #skin .skinChoices div img {

@@ -92,10 +92,13 @@ document.addEventListener("DOMContentLoaded", async function () {
       });
     });
 
-    championSkins.forEach((skin) => {
+    championSkins.forEach((skin, index) => {
+      const isActive = index === 0;
       const skinHTML = `
-        <div>
-          <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championInfo.data[championId].id}_${skin.num}.jpg" />
+        <div class="${isActive ? "active" : ""}">
+          <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${
+            championInfo.data[championId].id
+          }_${skin.num}.jpg" />
           <h2>${skin.name}</h2>
         </div>
       `;
@@ -111,14 +114,12 @@ document.addEventListener("DOMContentLoaded", async function () {
       if (clickedDiv && clickedDiv.parentElement === skinSection) {
         const skinImage = clickedDiv.querySelector("img");
 
-        // Appliquer la transition en ajustant l'opacité
         backgroundImage.style.opacity = 0;
 
-        // Attendez une courte période pour que l'opacité puisse changer avant de changer l'image
         setTimeout(() => {
           backgroundImage.src = skinImage.src;
-          backgroundImage.style.opacity = 1; // Rétablir l'opacité
-        }, 150); // Vous pouvez ajuster le délai si nécessaire
+          backgroundImage.style.opacity = 1;
+        }, 150);
 
         const allSkinDivs = document.querySelectorAll("#skin .skinScroll div");
         allSkinDivs.forEach((div) => div.classList.remove("active"));
