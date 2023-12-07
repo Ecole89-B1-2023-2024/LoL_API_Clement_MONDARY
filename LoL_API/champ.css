@@ -365,3 +365,12 @@ body .figc h1 {
   margin: 0 auto;
   border-radius: 0 0 25px 0;
 }
+
+.notfound {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-family: "Alegreya SC", sans-serif;
+  font-size: 5rem;
+  font-weight: normal;
+}

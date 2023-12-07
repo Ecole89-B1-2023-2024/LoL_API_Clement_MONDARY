@@ -71,16 +71,26 @@ document.addEventListener("DOMContentLoaded", async function () {
   function handleSearchInput(event) {
     const searchTerm = event.target.value.toLowerCase();
     const championLinks = selectionSection.querySelectorAll("a");
+    const notFoundMessage = document.querySelector(".notfound");
+
+    let championsFound = false;
 
     championLinks.forEach((link) => {
       const championName = link.querySelector("h3").textContent.toLowerCase();
 
       if (championName.includes(searchTerm)) {
         link.style.display = "block";
+        championsFound = true;
       } else {
         link.style.display = "none";
       }
     });
+
+    if (!championsFound) {
+      notFoundMessage.textContent = `Aucun champion correspondant à "${searchTerm}"`;
+    } else {
+      notFoundMessage.textContent = "";
+    }
   }
 
   function updateChampionInfoInHTML(championData) {
