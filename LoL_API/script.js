@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", async function () {
   const selectionSection = document.getElementById("selection");
-  const jsonUrl =
-    "https://ddragon.leagueoflegends.com/cdn/13.23.1/data/fr_FR/champion.json";
+  const jsonVersionUrl =
+    "https://ddragon.leagueoflegends.com/api/versions.json";
+  let championData;
 
   const searchInput = document.querySelector("form input");
   searchInput.addEventListener("input", handleSearchInput);
@@ -14,9 +15,25 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
   });
 
-  async function fetchChampionData() {
+  async function fetchChampionDataUrl() {
     try {
-      const response = await fetch(jsonUrl);
+      const response = await fetch(jsonVersionUrl);
+      const versionData = await response.json();
+      const latestVersion = versionData[0];
+      return `https://ddragon.leagueoflegends.com/cdn/${latestVersion}/data/fr_FR/champion.json`;
+    } catch (error) {
+      console.error(
+        "Erreur lors du chargement de la version du patch :",
+        error
+      );
+    }
+  }
+
+  async function fetchChampionData() {
+    const championDataUrl = await fetchChampionDataUrl();
+
+    try {
+      const response = await fetch(championDataUrl);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -27,7 +44,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
   }
 
-  let championData = JSON.parse(localStorage.getItem("championData"));
+  championData = JSON.parse(localStorage.getItem("championData"));
 
   if (!championData) {
     championData = await fetchChampionData();
@@ -63,9 +80,16 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   const refreshButton = document.getElementById("refresh");
   refreshButton.addEventListener("click", async () => {
-    const updatedChampionData = await fetchChampionData();
-    updateChampionInfoInHTML(updatedChampionData);
-    localStorage.setItem("championData", JSON.stringify(updatedChampionData));
+    console.log("Bouton Rafraîchir cliqué");
+    try {
+      const updatedChampionData = await fetchChampionData();
+      console.log("Données mises à jour :", updatedChampionData);
+      updateChampionInfoInHTML(updatedChampionData);
+      localStorage.setItem("championData", JSON.stringify(updatedChampionData));
+      console.log("Données locales mises à jour avec succès");
+    } catch (error) {
+      console.error("Erreur lors de la mise à jour des données :", error);
+    }
   });
 
   function handleSearchInput(event) {

@@ -3,9 +3,25 @@ function getQueryParam(name) {
   return urlParams.get(name);
 }
 
+async function fetchChampionInfoUrl(championId, versionUrl) {
+  try {
+    const response = await fetch(versionUrl);
+    const versionData = await response.json();
+    const latestVersion = versionData[0];
+    return `https://ddragon.leagueoflegends.com/cdn/${latestVersion}/data/fr_FR/champion/${championId}.json`;
+  } catch (error) {
+    console.error("Erreur lors du chargement de la version du patch :", error);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", async function () {
   const championId = getQueryParam("id");
-  const championInfoUrl = `https://ddragon.leagueoflegends.com/cdn/13.23.1/data/fr_FR/champion/${championId}.json`;
+  const jsonVersionUrl =
+    "https://ddragon.leagueoflegends.com/api/versions.json";
+  const championInfoUrl = await fetchChampionInfoUrl(
+    championId,
+    jsonVersionUrl
+  );
 
   try {
     const response = await fetch(championInfoUrl);
@@ -89,10 +105,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     spellImages.forEach((spellImage) => {
       spellImage.addEventListener("click", () => {
-        // Retirez la classe active de toutes les images
         spellImages.forEach((img) => img.classList.remove("active"));
 
-        // Ajoutez la classe active à l'image actuellement cliquée
         spellImage.classList.add("active");
       });
     });
@@ -139,7 +153,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     spriteImage.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championInfo.data[championId].id}_0.jpg`;
     titleElement.textContent = championInfo.data[championId].name;
 
-    // Affichez les images des sorts
     passiveImage.src = `https://ddragon.leagueoflegends.com/cdn/${championInfo.version}/img/passive/${championInfo.data[championId].passive.image.full}`;
     qSpellImage.src = `https://ddragon.leagueoflegends.com/cdn/${championInfo.version}/img/spell/${championInfo.data[championId].spells[0].image.full}`;
     wSpellImage.src = `https://ddragon.leagueoflegends.com/cdn/${championInfo.version}/img/spell/${championInfo.data[championId].spells[1].image.full}`;
