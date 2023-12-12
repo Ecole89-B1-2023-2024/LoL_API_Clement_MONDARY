@@ -7,7 +7,7 @@ async function fetchChampionInfoUrl(championId, versionUrl) {
   try {
     const response = await fetch(versionUrl);
     const versionData = await response.json();
-    const latestVersion = versionData[0];
+    const latestVersion = versionData[0].toString();
     return `https://ddragon.leagueoflegends.com/cdn/${latestVersion}/data/fr_FR/champion/${championId}.json`;
   } catch (error) {
     console.error("Erreur lors du chargement de la version du patch :", error);
@@ -25,6 +25,11 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   try {
     const response = await fetch(championInfoUrl);
+
+    if (!response.ok) {
+      throw new Error(`Erreur HTTP! Statut : ${response.status}`);
+    }
+
     const championInfo = await response.json();
 
     const champImage = document.querySelector(".blurchamp");
