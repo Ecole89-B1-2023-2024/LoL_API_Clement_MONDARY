@@ -37,5 +37,5 @@ This school project, titled "LoL Champs," is an unofficial documentation tool fo
 # Credits
 <ul>
 <li>League of Legends Data Dragon API: https://developer.riotgames.com/docs/lol#data-dragon</li>
-<li>Fonts: <a href="https://www.cdnfonts.com/montserrat-subrayada.font">Montserrat Subrayada</a>, Inter, and Alegreya fonts are sourced from cdnfonts.com : https://www.cdnfonts.com/montserrat-subrayada.font, https://www.cdnfonts.com/search?q=Alegreya</li>
+<li>Fonts: <a href="https://www.cdnfonts.com/montserrat-subrayada.font">Montserrat Subrayada</a>, Inter, and <a href="https://www.cdnfonts.com/search?q=Alegreya">Alegreya fonts</a> are sourced from cdnfonts.com.</li>
 </ul>
