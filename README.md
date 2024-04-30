@@ -1,4 +1,4 @@
-# Introduction
+# <br>Introduction</br>
 This project, titled "LoL Champs," is an unofficial documentation tool for League of Legends champions. Its main objective is to demonstrate proficiency in utilizing an online API.
 
 Features
