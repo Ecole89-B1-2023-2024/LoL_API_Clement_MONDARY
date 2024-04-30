@@ -1,5 +1,5 @@
 # <br>Introduction</br>
-This project, titled "LoL Champs," is an unofficial documentation tool for League of Legends champions. Its main objective is to demonstrate proficiency in utilizing an online API.
+This school project, titled "LoL Champs," is an unofficial documentation tool for League of Legends champions. Its main objective is to demonstrate proficiency in utilizing an online API.
 
 # Features
 <ul>
@@ -9,7 +9,8 @@ This project, titled "LoL Champs," is an unofficial documentation tool for Leagu
 <li>Champion Details: Clicking on a champion reveals detailed information about them, including their abilities and skins.</li>
 <li>Refresh Button: Allows users to update the champion data if necessary.</li>
 </ul>
-Technologies Used
+
+# Technologies Used
 HTML, CSS, JavaScript: Used for structuring the web pages, styling, and implementing interactive functionalities.
 League of Legends Data Dragon API: Used to fetch champion data, including images and information.
 File Structure
