@@ -1,12 +1,14 @@
 # <br>Introduction</br>
 This project, titled "LoL Champs," is an unofficial documentation tool for League of Legends champions. Its main objective is to demonstrate proficiency in utilizing an online API.
 
-Features
-Champion Selection: Allows users to browse through a list of League of Legends champions.
-Random Champion Display: Upon loading, a random champion is displayed with brief information.
-Search Functionality: Users can search for specific champions using a search bar.
-Champion Details: Clicking on a champion reveals detailed information about them, including their abilities and skins.
-Refresh Button: Allows users to update the champion data if necessary.
+# Features
+<ul>
+<li>Champion Selection: Allows users to browse through a list of League of Legends champions.</li>
+<li>Random Champion Display: Upon loading, a random champion is displayed with brief information.</li>
+<li>Search Functionality: Users can search for specific champions using a search bar.</li>
+<li>Champion Details: Clicking on a champion reveals detailed information about them, including their abilities and skins.</li>
+<li>Refresh Button: Allows users to update the champion data if necessary.</li>
+</ul>
 Technologies Used
 HTML, CSS, JavaScript: Used for structuring the web pages, styling, and implementing interactive functionalities.
 League of Legends Data Dragon API: Used to fetch champion data, including images and information.
